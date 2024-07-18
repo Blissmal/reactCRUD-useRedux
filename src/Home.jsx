@@ -1,6 +1,10 @@
 import React from 'react'
+import { useSelector } from 'react-redux'
 
 const Home = () => {
+    
+    const users = useSelector(state => state.users)
+
   return (
     <div className='container'>
       <h2>Crud App with JSON server</h2>
@@ -15,7 +19,7 @@ const Home = () => {
             </tr>
         </thead>
         <tbody>
-            
+
         </tbody>
       </table>
     </div>
