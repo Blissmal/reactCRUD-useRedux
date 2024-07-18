@@ -1,16 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 
 const Update = () => {
-  const id = useParams();
-
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
+  const { id } = useParams();
 
   const users = useSelector((state) => state.users);
-  const existingUser = users.filter((f) => f.id === id);
+  const existingUser = users.filter((f) => f.id == id);
   const { name, email } = existingUser[0];
+  const [uname, setName] = useState(name);
+  const [uemail, setEmail] = useState(email);
 
   return (
     <div className="d-flex w-100 vh-100 justify-content-center align-items-center">
@@ -24,6 +23,8 @@ const Update = () => {
               name="name"
               className="form-control"
               placeholder="enter name"
+              value={uname}
+              onChange={(e) => setName(e.target.value)}
             />
           </div>
           <div>
@@ -33,6 +34,8 @@ const Update = () => {
               name="email"
               className="form-control"
               placeholder="enter email"
+              value={uemail}
+              onChange={(e) => setEmail(e.target.value)}
             />
           </div>
           <br />
