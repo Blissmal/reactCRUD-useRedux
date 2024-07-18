@@ -7,11 +7,11 @@ export const userList = [
     {
         name: "Bethuel",
         email: "malutibethuel@gmail.com",
-        id: 1
+        id: 2
     },
     {
         name: "Maluti",
         email: "bliss123@gmail.com",
-        id: 1
+        id: 3
     },
 ]

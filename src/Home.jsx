@@ -1,11 +1,10 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 const Home = () => {
     
     const users = useSelector((state) => state.users)
-    console.log(users)
 
   return (
     <div className='container'>
@@ -28,7 +27,7 @@ const Home = () => {
                         <td>{user.name}</td>
                         <td>{user.email}</td>
                         <td>
-                            <button className='btn btn-sm btn-primary'>Edit</button>
+                            <Link to={`/edit/${user.id}`} className='btn btn-sm btn-primary'>Edit</Link>
                             <button className='btn btn-sm btn-danger ms-2'>Delete</button>
                         </td>
                     </tr>
